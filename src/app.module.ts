@@ -10,9 +10,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Beverage } from './beverage.entity';
 import { RestaurantsModule } from './restaurants/restaurants.module';
+import { HistoriesModule } from './histories/histories.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), TypeOrmModule.forFeature([Beverage]), UsersModule, AuthModule, RestaurantsModule],
+  imports: [TypeOrmModule.forRoot(config), TypeOrmModule.forFeature([Beverage]), UsersModule, AuthModule, RestaurantsModule, HistoriesModule],
   controllers: [AppController],
   providers: [AppService],
 })
