@@ -11,12 +11,16 @@ export class AppService {
   }
 
   findAll(): Promise<Beverage[]> {
-    return this.beverageRepository.find();
+    return this.beverageRepository.find({
+      relations: ['logos']
+    });
   }
 
   async findOneById(id: number): Promise<Beverage> {
     try {
-      const beverage = await this.beverageRepository.findOneOrFail(id);
+      const beverage = await this.beverageRepository.findOneOrFail(id, {
+        relations: ['logos']
+      });
 
       return beverage;
     } catch (err) {

@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+
+import { Logo } from './logo.entity';
 
 @Entity()
 export class Beverage {
@@ -10,4 +12,7 @@ export class Beverage {
 
     @Column()
     brand: string;
+
+    @OneToMany(type => Logo, logo => logo.beverage)
+    logos: Logo[];
 }
