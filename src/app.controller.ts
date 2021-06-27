@@ -20,7 +20,7 @@ export class AppController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Get('protected')
+  @Get('me')
   getProtectedHello(@Request() req): any {
     return { user: req.user };
   }
