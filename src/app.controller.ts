@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 
 import { LocalAuthGuard } from './auth/local-auth.guard';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
@@ -17,6 +17,11 @@ export class AppController {
   @Post('login')
   login(@Request() req): any {
     return this.authService.login(req.user);
+  }
+
+  @Post('signup')
+  signup(@Body() body): any {
+    return this.authService.signup(body);
   }
 
   @UseGuards(JwtAuthGuard)
