@@ -6,7 +6,7 @@ const config: PostgresConnectionOptions = {
   entities: ['dist/**/**.entity{.ts,.js}'],
   synchronize: false,
   migrations: [
-    'dist/src/db/migrations/*.js'
+    'dist/db/migrations/*.js'
   ],
   cli: {
     migrationsDir: 'src/db/migrations'
