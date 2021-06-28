@@ -2,11 +2,7 @@ import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConne
 
 const config: PostgresConnectionOptions = {
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'ho-xy-dev',
+  url: process.env.DB_URL || 'postgres://postgres:postgres@localhost:5432/ho-xy-dev',
   entities: ['dist/**/**.entity{.ts,.js}'],
   synchronize: false,
   migrations: [
