@@ -1,4 +1,4 @@
-import { History } from "src/histories/entities/history.entity";
+import { History } from "../../histories/entities/history.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()

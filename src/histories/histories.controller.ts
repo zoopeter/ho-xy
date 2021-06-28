@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Request, UseGuards } from '@nestjs/common';
 
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { UsersService } from 'src/users/users.service';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { UsersService } from '../users/users.service';
 import { CreateHistoryDto } from './dto/create-history.dto';
 import { UpdateHistoryDto } from './dto/update-history.dto';
 import { History } from './entities/history.entity';
